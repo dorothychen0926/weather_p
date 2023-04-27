@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--logo_brown);
+  line-height: 1.2;
+  background-image: url(../layout_img/sky2.svg);
+  background-repeat: no-repeat;
+  z-index: 1;
+  background-size: contain;
+  
+}
+
+
+/* ----------區塊---------- */
+
+.width_1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+/* ----------字體---------- */
+.font_14{
+    font-size: 14px;
+}
+.font_16{
+    font-size: 16px;
+}
+.font_18{
+    font-size: 18px;
+}
+.font_22{
+    font-size: 22px;
+}
+
+/* ----------色彩---------- */
+:root{
+    --bar_grey: #E6E5DF;
+    --header:#F9F9F9;
+    --white:#FFFFFF;
+    --logo_green:#344C05;
+    --logo_Khaki:#72610D;
+    --logo_brown:#2D1A0B;
+    --pink:#E06284;
+    --red:#990000;
+    --yellow:#F1F0EA;
+}
+
