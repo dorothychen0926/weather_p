@@ -1,10 +1,11 @@
 $(function() {
+    // 解決跨域同源的問題
     const cors = 'https://cors-anywhere.herokuapp.com/';
     $.ajax({
         //臺灣各縣市鄉鎮未來1週逐12小時天氣預報
         //locationName記得加上項目去篩選，否則一次撈取就是大批資料
         //請求資料的網址
-        url:'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-071?Authorization=CWB-2B5A3C1B-45AC-4F0D-B605-B3560F30D7E6&format=JSON&locationName=%E6%9D%BF%E6%A9%8B%E5%8D%80&elementName=T',
+        url:'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-005?Authorization=CWB-2B5A3C1B-45AC-4F0D-B605-B3560F30D7E6&elementName=T',
         //請求資料的方式(Ex:POST / GET / PUT...等)
         method: "GET",
         // 請求資料的類型(Ex:xml, json, script, or html...等)
@@ -13,8 +14,10 @@ $(function() {
         //rest自已取
         //data: 如果需要傳送資料出去時，則將資料設定在這裡
         success: function(res) {
-            //res這個變數代表全部的資料
+            //res這個變數代表已傳入全部的資料
             console.log(res);
+
+
             // console.log("鄉鎮市為"+ res.records.locations[0].locationsName);
             // console.log("區為" + res.records.locations[0].location[0].locationName);
             // console.log("溫度為"+ res.records.locations[0].location[0].weatherElement[0].time[0].elementValue[0].value);
@@ -22,6 +25,7 @@ $(function() {
             $('#city_name').html(res.records.locations[0].locationsName);
             $('#district').html(res.records.locations[0].location[0].locationName);
             $('#tempture').html(res.records.locations[0].location[0].weatherElement[0].time[0].elementValue[0].value+'&#176;');
+
 
             //拆html架構
             //重復性的東西最好用vue
@@ -44,6 +48,7 @@ $(function() {
                 let tempture = res.records.locations[0].location[0].weatherElement[0].time[i].elementValue[0].value;
                 //只有是或否的ＩＦ判斷，可以使用三元運算子
                 icon = (tempture > 18) ? "https://i.imgur.com/Shrg84B.png" : "https://i.imgur.com/BeWfUuG.png";
+
                 weather_html = weather_html + html1 + week[j] + html2 + icon + html3 +  tempture + html4;
                 console.log(weather_html);
                 $('#weekday').html(weather_html);

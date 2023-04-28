@@ -10,43 +10,39 @@ body {
   background-image: url(../layout_img/sky2.svg);
   background-repeat: no-repeat;
   z-index: 1;
-  background-size: contain;
-  
+  background-size: cover;
 }
-
 
 /* ----------區塊---------- */
 
 .width_1200 {
-    max-width: 1200px;
-    margin: 0 auto;
-
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* ----------字體---------- */
-.font_14{
-    font-size: 14px;
+.font_14 {
+  font-size: 14px;
 }
-.font_16{
-    font-size: 16px;
+.font_16 {
+  font-size: 16px;
 }
-.font_18{
-    font-size: 18px;
+.font_18 {
+  font-size: 18px;
 }
-.font_22{
-    font-size: 22px;
+.font_22 {
+  font-size: 22px;
 }
 
 /* ----------色彩---------- */
-:root{
-    --bar_grey: #E6E5DF;
-    --header:#F9F9F9;
-    --white:#FFFFFF;
-    --logo_green:#344C05;
-    --logo_Khaki:#72610D;
-    --logo_brown:#2D1A0B;
-    --pink:#E06284;
-    --red:#990000;
-    --yellow:#F1F0EA;
+:root {
+  --bar_grey: #e6e5df;
+  --header: #f9f9f9;
+  --white: #ffffff;
+  --logo_green: #344c05;
+  --logo_Khaki: #72610d;
+  --logo_brown: #2d1a0b;
+  --pink: #e06284;
+  --red: #990000;
+  --yellow: #f1f0ea;
 }
-
